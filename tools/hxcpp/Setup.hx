@@ -519,14 +519,8 @@ class Setup
             };
 
             if (minPlatform == null) {
-               Log.warn("Defaulting to Android platform 21");
-               minPlatform = 21;
-            }
-
-            // only platform version 21 and above support 64 bit
-            // https://developer.android.com/about/versions/lollipop#Perf
-            if (minPlatform < 21 && (defines.exists('HXCPP_ARM64') || defines.exists('HXCPP_X86_64'))) {
-               minPlatform = 21;
+               Log.warn("Defaulting to Android platform 24");
+               minPlatform = 24;
             }
 
             defines.set("HXCPP_ANDROID_PLATFORM", Std.string(minPlatform));
